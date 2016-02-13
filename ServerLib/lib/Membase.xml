@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Membase</name>
+    </assembly>
+    <members>
+        <member name="M:Membase.BucketConfigListener.Start">
+            <summary>
+            Starts listening for configuration data. This method blocks until the initial configuration is received. (Or until all pool urls fail.)
+            </summary>
+        </member>
+        <member name="M:Membase.BucketConfigListener.ReleaseListener(Membase.MessageStreamListener)">
+            <summary>
+            Unsubscibes from a pooled listener, and destrpys it if no additionals subscribers are present.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Membase.BucketConfigListener.GetPooledListener">
+            <summary>
+            Returns a MessageStreamListener instance based on this instance's configuratino (timeout, bucket name etc.)
+            
+            When multiple listeners are requested with the exact same parameters (usually when multiple clients are instantiated from the same configuration),
+            the same listener will be returned each time.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Membase.BucketConfigListener.Timeout">
+            <summary>
+            Connection timeout in milliseconds for connecting the pool.
+            </summary>
+        </member>
+        <member name="P:Membase.BucketConfigListener.DeadTimeout">
+            <summary>
+            Time to wait in milliseconds to reconnect to the pool when all nodes are down.
+            </summary>
+        </member>
+        <member name="E:Membase.BucketConfigListener.ClusterConfigChanged">
+            <summary>
+            Raised when the pool's configuration changes.
+            </summary>
+        </member>
+        <member name="M:Membase.ConfigHelper.DeserializeUri``1(System.Net.WebClient,System.Uri,System.Collections.Generic.IEnumerable{System.Web.Script.Serialization.JavaScriptConverter})">
+            <summary>
+            Deserializes the content of an url as a json object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Membase.ConfigHelper.ResolveBucket(System.Net.WebClient,System.Uri,System.String)">
+            <summary>
+            Asks the cluster for the specified bucket's configuration.
+            </summary>
+            <param name="poolUri"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Membase.Configuration.BucketPortType.Proxy">
+            <summary>
+            Connect to the nodes using moxy
+            </summary>
+        </member>
+        <member name="F:Membase.Configuration.BucketPortType.Direct">
+            <summary>
+            Connect to the nodes directly using the Memcached port
+            </summary>
+        </member>
+        <member name="M:Membase.Configuration.IMembaseClientConfiguration.CreateKeyTransformer">
+            <summary>
+            Creates an <see cref="T:Enyim.Caching.Memcached.IMemcachedKeyTransformer"/> instance which will be used to convert item keys for Memcached.
+            </summary>
+        </member>
+        <member name="M:Membase.Configuration.IMembaseClientConfiguration.CreateNodeLocator">
+            <summary>
+            Creates an <see cref="T:Enyim.Caching.Memcached.IMemcachedNodeLocator"/> instance which will be used to assign items to Memcached nodes.
+            </summary>
+        </member>
+        <member name="M:Membase.Configuration.IMembaseClientConfiguration.CreateTranscoder">
+            <summary>
+            Creates an <see cref="T:Enyim.Caching.Memcached.ITranscoder"/> instance which will be used to serialize or deserialize items.
+            </summary>
+        </member>
+        <member name="M:Membase.Configuration.IMembaseClientConfiguration.CreatePerformanceMonitor">
+            <summary>
+            Creates an <see cref="T:Enyim.Caching.Memcached.IPerformanceMonitor"/> instance which will be used to monitor the performance of the client.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.IMembaseClientConfiguration.Bucket">
+            <summary>
+            Gets the name of the bucket to be used. If not specified the "default" bucket will be used.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.IMembaseClientConfiguration.BucketPassword">
+            <summary>
+            Gets the pasword used to connect to the bucket.
+            </summary>
+            <remarks> If null, the bucket name will be used. Set to String.Empty to use an empty password.</remarks>
+        </member>
+        <member name="P:Membase.Configuration.IMembaseClientConfiguration.Urls">
+            <summary>
+            Gets a list of <see cref="T:IPEndPoint"/> each representing a Memcached server in the pool.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.IMembaseClientConfiguration.SocketPool">
+            <summary>
+            Gets the configuration of the socket pool.
+            </summary>
+        </member>
+        <member name="T:Membase.Configuration.MembaseClientConfiguration">
+            <summary>
+            Configuration class
+            </summary>
+        </member>
+        <member name="M:Membase.Configuration.MembaseClientConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MemcachedClientConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.Bucket">
+            <summary>
+            Gets or sets the name of the bucket to be used. Can be overriden at the pool's constructor, and if not specified the "default" bucket will be used.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.BucketPassword">
+            <summary>
+            Gets or sets the pasword used to connect to the bucket.
+            </summary>
+            <remarks> If null, the bucket name will be used. Set to String.Empty to use an empty password.</remarks>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.Urls">
+            <summary>
+            Gets a list of <see cref="T:IPEndPoint"/> each representing a Memcached server in the pool.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.SocketPool">
+            <summary>
+            Gets the configuration of the socket pool.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.KeyTransformer">
+            <summary>
+            Gets or sets the <see cref="T:Enyim.Caching.Memcached.IMemcachedKeyTransformer"/> which will be used to convert item keys for Memcached.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.NodeLocator">
+            <summary>
+            Gets or sets the Type of the <see cref="T:Enyim.Caching.Memcached.IMemcachedNodeLocator"/> which will be used to assign items to Memcached nodes.
+            </summary>
+            <remarks>If both <see cref="M:NodeLocator"/> and  <see cref="M:NodeLocatorFactory"/> are assigned then the latter takes precedence.</remarks>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.NodeLocatorFactory">
+            <summary>
+            Gets or sets the NodeLocatorFactory instance which will be used to create a new IMemcachedNodeLocator instances.
+            </summary>
+            <remarks>If both <see cref="M:NodeLocator"/> and  <see cref="M:NodeLocatorFactory"/> are assigned then the latter takes precedence.</remarks>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.Transcoder">
+            <summary>
+            Gets or sets the <see cref="T:Enyim.Caching.Memcached.ITranscoder"/> which will be used serialzie or deserialize items.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientConfiguration.PerformanceMonitorFactory">
+            <summary>
+            Gets or sets the <see cref="T:Enyim.Caching.Memcached.IPerformanceMonitor"/> instance which will be used monitor the performance of the client.
+            </summary>
+        </member>
+        <member name="T:Membase.Configuration.MembaseClientSection">
+            <summary>
+            Configures the <see cref="T:MembaseClient"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:Membase.Configuration.MembaseClientSection.PostDeserialize">
+            <summary>
+            Called after deserialization.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientSection.SocketPool">
+            <summary>
+            Gets or sets the configuration of the socket pool.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientSection.NodeLocator">
+            <summary>
+            Gets or sets the <see cref="T:Enyim.Caching.Memcached.IMemcachedNodeLocator"/> which will be used to assign items to Memcached nodes.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientSection.KeyTransformer">
+            <summary>
+            Gets or sets the <see cref="T:Enyim.Caching.Memcached.IMemcachedKeyTransformer"/> which will be used to convert item keys for Memcached.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientSection.Transcoder">
+            <summary>
+            Gets or sets the <see cref="T:Enyim.Caching.Memcached.ITranscoder"/> which will be used serialize or deserialize items.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.MembaseClientSection.PerformanceMonitorFactory">
+            <summary>
+            Gets or sets the <see cref="T:Enyim.Caching.Memcached.IPerformanceMonitor"/> which will be used monitor the performance of the client.
+            </summary>
+        </member>
+        <member name="T:Membase.Configuration.ServersElement">
+            <summary>
+            Configures the <see cref="T:MemcachedClient"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.ServersElement.Bucket">
+            <summary>
+            Gets or sets the name of the bucket to be used. Can be overriden at the pool's constructor, and if not specified the "default" bucket will be used.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.ServersElement.BucketPassword">
+            <summary>
+            Gets or sets the pasword used to connect to the bucket.
+            </summary>
+            <remarks> If null, the bucket name will be used. Set to String.Empty to use an empty password.</remarks>
+        </member>
+        <member name="P:Membase.Configuration.ServersElement.UserName">
+            <summary>
+            (Obsolete) Gets or sets the user name used to connect to a secured cluster
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.ServersElement.Password">
+            <summary>
+            (Obsolete) Gets or sets the password used to connect to a secured cluster
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.ServersElement.Urls">
+            <summary>
+            Returns a collection of nodes in the cluster the client should use to retrieve the Memcached nodes.
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.ServersElement.Port">
+            <summary>
+            Determines which port the client should use to connect to the nodes
+            </summary>
+        </member>
+        <member name="T:Membase.Configuration.UriElement">
+            <summary>
+            Represents a configuration element that contains a Memcached node address. This class cannot be inherited. 
+            </summary>
+        </member>
+        <member name="P:Membase.Configuration.UriElement.Uri">
+            <summary>
+            Gets or sets the ip address of the node.
+            </summary>
+        </member>
+        <member name="T:Membase.Configuration.UriElementCollection">
+            <summary>
+            Represents a collection of <see cref="T:EndPointElement"/> instances. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:Membase.Configuration.UriElementCollection.CreateNewElement">
+            <summary>
+            Creates a new <see cref="T:ConfigurationElement"/>.
+            </summary>
+            <returns>A new <see cref="T:ConfigurationElement"/>.</returns>
+        </member>
+        <member name="M:Membase.Configuration.UriElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Gets the element key for a specified configuration element when overridden in a derived class.
+            </summary>
+            <param name="element">The <see cref="T:ConfigurationElement"/> to return the key for. </param>
+            <returns>An <see cref="T:Object"/> that acts as the key for the specified <see cref="T:ConfigurationElement"/>.</returns>
+        </member>
+        <member name="M:Membase.Configuration.UriElementCollection.ToUriCollection">
+            <summary>
+            Helper method; converts the collection into an <see cref="T:IPEndPoint"/> collection for the interface implementation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Membase.MessageStreamListener">
+            <summary>
+            Listens on a streamingUri and processes the messages
+            </summary>
+        </member>
+        <member name="M:Membase.MessageStreamListener.#ctor(System.Uri[],System.Func{Membase.WebClientWithTimeout,System.Uri,System.Uri})">
+            <summary>
+            
+            </summary>
+            <param name="urls"></param>
+            <param name="converter">you use this to redirect the original url into somewhere else. called only once by urls before the MessageStreamListener starts processing it</param>
+        </member>
+        <member name="M:Membase.MessageStreamListener.Start">
+            <summary>
+            Starts processing the streaming URI
+            </summary>
+        </member>
+        <member name="M:Membase.MessageStreamListener.Stop">
+            <summary>
+            Stops processing
+            </summary>
+        </member>
+        <member name="M:Membase.MessageStreamListener.SleepUntil(System.Int32)">
+            <summary>
+            Sleeps until the time elapses. Returns false if the sleep was aborted.
+            </summary>
+            <param name="milliseconds"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Membase.MessageStreamListener.Credentials">
+            <summary>
+            The credentials used to connect to the urls.
+            </summary>
+        </member>
+        <member name="P:Membase.MessageStreamListener.Timeout">
+            <summary>
+            Connection timeout in milliseconds for connecting the urls.
+            </summary>
+        </member>
+        <member name="P:Membase.MessageStreamListener.DeadTimeout">
+            <summary>
+            The time in milliseconds the listener should wait when retrying after the whole server list goes down.
+            </summary>
+        </member>
+        <member name="T:Membase.MembaseClient">
+            <summary>
+            Client which can be used to connect to NothScale's Memcached and Membase servers.
+            </summary>
+        </member>
+        <member name="M:Membase.MembaseClient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Membase.MembaseClient" /> class using the default configuration and bucket.
+            </summary>
+            <remarks>The configuration is taken from the /configuration/membase section.</remarks>
+        </member>
+        <member name="M:Membase.MembaseClient.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Membase.MembaseClient" /> class using the default configuration and the specified bucket.
+            </summary>
+            <remarks>The configuration is taken from the /configuration/membase section.</remarks>
+        </member>
+        <member name="M:Membase.MembaseClient.#ctor(Membase.Configuration.IMembaseClientConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Membase.MembaseClient" /> class using a custom configuration provider.
+            </summary>
+            <param name="configuration">The custom configuration provider.</param>
+        </member>
+        <member name="M:Membase.MembaseClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Membase.MembaseClient" /> class using the specified configuration 
+            section and the specified bucket.
+            </summary>
+            <param name="sectionName">The name of the configuration section to load.</param>
+            <param name="bucketName">The name of the bucket this client will connect to.</param>
+            <param name="bucketPassword">The password of the bucket this client will connect to.</param>
+        </member>
+        <member name="M:Membase.MembaseClient.#ctor(Membase.Configuration.IMembaseClientConfiguration,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Membase.MembaseClient" /> class 
+            using a custom configuration provider and the specified bucket name and password.
+            </summary>
+            <param name="configuration">The custom configuration provider.</param>
+            <param name="bucketName">The name of the bucket this client will connect to.</param>
+            <param name="bucketPassword">The password of the bucket this client will connect to.</param>
+        </member>
+        <member name="M:Membase.MembaseClient.#ctor(System.String)">
+            <summary>Obsolete. Use .ctor(bucket, password) to explicitly set the bucket password.</summary>
+        </member>
+        <member name="M:Membase.MembaseClient.#ctor(Membase.Configuration.IMembaseClientConfiguration,System.String)">
+            <summary>Obsolete. Use .ctor(config, bucket, password) to explicitly set the bucket password.</summary>
+        </member>
+        <member name="T:Membase.MembasePool">
+            <summary>
+            Socket pool using the Membase server's dynamic node list
+            </summary>
+        </member>
+        <member name="M:Membase.MembasePool.#ctor(Membase.Configuration.IMembaseClientConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Membase.MembasePool" />.
+            </summary>
+            <param name="configuration">The configuration to be used.</param>
+        </member>
+        <member name="M:Membase.MembasePool.#ctor(Membase.Configuration.IMembaseClientConfiguration,System.String)">
+            <summary>Obsolete. Use .ctor(config, bucket, password) to explicitly set the bucket password.</summary>
+        </member>
+        <member name="M:Membase.MembasePool.#ctor(Membase.Configuration.IMembaseClientConfiguration,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Membase.MembasePool" /> class using the specified configuration,
+            bucket name and password.
+            </summary>
+            <param name="configuration">The configuration to be used.</param>
+            <param name="bucketName">The name of the bucket to connect to. Overrides the configuration's Bucket property.</param>
+            <param name="bucketPassword">The password to the bucket. Overrides the configuration's BucketPassword property.</param>
+        </member>
+        <member name="T:Membase.VBucketAwareOperationFactory">
+            <summary>
+            Membase requires each item operation to have a vbucket index set in the request's "reserved" field. (This is used for replicatiom and failover.) This op factory provides customized operations handling these indexes.
+            </summary>
+        </member>
+        <member name="M:Membase.WebClientWithTimeout.GetWebRequest(System.Uri,System.String)">
+            <summary>
+            Returns a <see cref="T:System.Net.WebRequest"/> object for the specified resource. The returned instance will have a custom ConnectionGroup to avoid running into connection limits.
+            </summary>
+            <param name="address">A <see cref="T:System.Uri"/> that identifies the resource to request. </param>
+            <returns>A new <see cref="T:System.Net.WebRequest"/> object for the specified resource. </returns>
+        </member>
+        <member name="P:Membase.WebClientWithTimeout.Timeout">
+            <summary>
+            Connection timeout in msec.
+            </summary>
+        </member>
+        <member name="P:Membase.WebClientWithTimeout.PreAuthenticate">
+            <summary>
+            This will send the credentials (using basic auth) every time without getting a 401 response from the server.
+            </summary>
+        </member>
+    </members>
+</doc>

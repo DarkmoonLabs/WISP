@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Effects>
+  <Effect>
+    <EffectKind>ShadowSilver</EffectKind>
+    <DurationKind>Time</DurationKind>
+    <Duration>3600</Duration>
+    <Group>Evocation</Group>
+    <DisplayName>Shadow Silver</DisplayName>
+    <Description>You entered into a pact with the Shadow Folk of the Dead Marshes.  Gain 20% extra Silver every turn.  At the end of pact's duration, you must sacrifice 20% of all the Merchants in your Kingdom.</Description>
+    <TickLength>300</TickLength>
+    <EventsToListenTo>
+      <Event type="ResourceAmountChanged"/>
+    </EventsToListenTo>
+  </Effect>
+
+  <Effect>
+    <EffectKind>SamhainsBlessing</EffectKind>
+    <DurationKind>Turns</DurationKind>
+    <Duration>7</Duration>
+    <Group>Gaia</Group>
+    <DisplayName>Samhain's Blessing</DisplayName>
+    <Description>You are blessed with additional food production every turn.</Description>
+    <TickLength>1</TickLength>
+    <EventsToListenTo>
+      <Event type="ResourceAmountChanged"/>
+    </EventsToListenTo>
+  </Effect>
+
+</Effects>

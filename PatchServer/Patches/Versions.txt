@@ -1,0 +1,7 @@
+﻿-- Version file.  Lists all of the patches available along with the version for that patch file.
+-- Lines starting with -- are ignored.
+-- Blank lines are ignored.
+
+-- From version 0 to 1... I.E this is a new install with no files on board yet.
+1.00 patch_0.00_1.00.patch
+

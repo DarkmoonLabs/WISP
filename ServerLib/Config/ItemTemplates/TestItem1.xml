@@ -1,0 +1,14 @@
+﻿<Item Name="Test Item # 1" GOT="GenericItem">
+  <Properties>
+    <Property Name="Description" StringValue="Let's see if this works. Æegis says awesome."></Property>
+    <Property Name="HP" LongValue="100"/>
+    <Property Name="Skill" FloatValue="37.3"/>
+    <Property Name="Speed" FloatValue="1.0"/>
+  </Properties>
+  <Stats>
+    <Stat StatID="Gold" StartValue="5000"></Stat>
+  </Stats>
+  <Scripts>
+    <Script Name="TestScript"/>
+  </Scripts>
+</Item>

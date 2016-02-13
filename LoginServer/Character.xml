@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <Character>
+    <!--SIMPLE PROPERTIES-->
+    <PropertyBag Name="Character">
+      
+      <IntProperties>
+      </IntProperties>
+      
+      <FloatProperties>
+      </FloatProperties>
+      
+      <LongProperties>
+        <Property ID="-999" Name="Last Login">0</Property>
+      </LongProperties>
+      
+      <StringProperties>
+        <Property ID="-1000" Name="Name">J. Doez</Property>
+        <Property ID="-1001" Name="Race">None</Property>
+      </StringProperties>            
+      
+    </PropertyBag>
+  
+    <!--STATS-->
+    <StatBag Name ="Character">
+      <Stat StatID="1" Comment="Speed">100</Stat>
+    </StatBag>
+    
+  </Character>
+</Template>

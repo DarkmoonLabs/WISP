@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Stats>
+  <Stat StatID="1" Name="Speed" MinValue="25.0" MaxValue="200" StartingValue="100.1" Desc="Movement speed" Group="Character"/>
+  <Stat StatID="2" Name="Hit Points" MinValue="0" MaxValue="1000" StartingValue="250" Desc="The life force of the character" Group="Character"/>
+</Stats>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC45CE45-98AF-44FC-B98D-2A342C5CE57E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TurnedLobbyLib</RootNamespace>
+    <AssemblyName>TurnedLobbyLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Packets\TurnedGameMessageKind.cs" />
+    <Compile Include="Interfaces\IPhase.cs" />
+    <Compile Include="Interfaces\IGameSequencerItem.cs" />
+    <Compile Include="Interfaces\ITurnedGame.cs" />
+    <Compile Include="Packets\PacketPhaseUpdate.cs" />
+    <Compile Include="Packets\PacketTurnOrderUpdate.cs" />
+    <Compile Include="Phases\BeginningOfTurnPhase.cs" />
+    <Compile Include="Phases\MainPhase.cs" />
+    <Compile Include="Phases\EndOfTurnPhase.cs" />
+    <Compile Include="Phases\PhaseId.cs" />
+    <Compile Include="Phases\RoundEndSequenceItem.cs" />
+    <Compile Include="Phases\RoundStartupSequenceItem.cs" />
+    <Compile Include="Phases\Phase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sequencer\GameSequencer.cs" />
+    <Compile Include="Sequencer\GameSequencerItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{7D862E24-CB5B-4D85-9A10-B645EFF78EFF}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LobbyLib\LobbyLib.csproj">
+      <Project>{1D5DF12A-4E27-43B5-8FE3-C343EF5B2F23}</Project>
+      <Name>LobbyLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sockets\SocketsLib.csproj">
+      <Project>{802E491B-1933-48AD-B3F9-555074FB2792}</Project>
+      <Name>SocketsLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

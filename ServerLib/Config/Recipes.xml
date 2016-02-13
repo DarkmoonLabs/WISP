@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+  <Recipe>
+    <ID>1</ID>
+    <Name>Land</Name>
+    <Description>Each acre of land, provides exactly one resource.  You won't know which resource a piece of land might have until you purchase it.  Some resources are more rare than others.</Description>
+    <RecipeGroup>Land</RecipeGroup>    
+    <Ingredients>
+      <Ingredient resourceType="stat" resource="Gold" amount="100" />
+    </Ingredients>    
+    <Results>
+      <Result resourceType="stat" resource="Land" amount="1"/>
+    </Results>    
+  </Recipe>
+  
+  <Recipe>
+    <ID>778</ID>
+    <Name>Alchemysts</Name>
+    <Description>Alchemysts extract spell shards from the Mana Scars on your lands.  Spell shards are used for all manner of magical undertakings. Becoming an Alchemyst is a hazardous task and about two out of three trainees succumb to some kind of unfortunately accident during training.</Description>
+    <RecipeGroup>Laborer</RecipeGroup> 
+    <Ingredients>
+      <Ingredient resourceType="stat" resource="Peasants" amount="3" />
+      <Ingredient resourceType="stat" resource="Time" amount="5" />
+    </Ingredients>
+    <Results>
+      <Result resourceType="stat" resource="Alchemysts" amount="1"/>
+      <Result resourceType="item" resource="TestItem1" amount="1"/>
+    </Results>
+  </Recipe>
+
+  <Recipe>
+    <ID>779</ID>
+    <Name>Farmers</Name>
+    <Description>Farmers work your land to generate food to feed your Kingdom.  If your Kingdom is not fed sufficiently, it will crumble in no time at all.  Training Farmers takes {0} turns.</Description>
+    <RecipeGroup>Laborer</RecipeGroup>
+    <Ingredients>
+      <Ingredient resourceType="stat" resource="Peasants" amount="1" />
+      <Ingredient resourceType="stat" resource="Time" amount="3" />
+      <Ingredient resourceType="stat" resource="Birch" amount="100" why="for tools" />
+      <Ingredient resourceType="stat" resource="Gold" amount="100" />
+    </Ingredients>
+    <Results>
+      <Result resourceType="stat" resource="Farmers" amount="1"/>
+    </Results>
+  </Recipe>
+
+  <Recipe>
+    <ID>780</ID>
+    <Name>Merchants</Name>
+    <Description>Merchants are responsible for generating income for your Kingdom.  The more lands you own, the more potential Silver your Merchants have access to.</Description>
+    <RecipeGroup>Laborer</RecipeGroup>
+    <Ingredients>
+      <Ingredient resourceType="stat" resource="Peasants" amount="1" />
+      <Ingredient resourceType="stat" resource="Time" amount="5" />
+    </Ingredients>
+    <Results>
+      <Result resourceType="stat" resource="Merchants" amount="1"/>      
+    </Results>
+  </Recipe>
+
+  <Recipe>
+    <ID>781</ID>
+    <Name>Masons</Name>
+    <Description>Masons work the quarries on your lands to generate building blocks for city improvements and structures.  Quarries are subject to frequent cave-ins, causing about half of the more inexperienced trainees to perish before they ever carve a single block of stone.</Description>
+    <RecipeGroup>Laborer</RecipeGroup>
+    <Ingredients>
+      <Ingredient resourceType="stat" resource="Peasants" amount="2" />
+      <Ingredient resourceType="stat" resource="Time" amount="5" />
+    </Ingredients>
+    <Results>
+      <Result resourceType="stat" resource="Masons" amount="1"/>
+    </Results>
+  </Recipe>
+
+  <Recipe>
+    <ID>782</ID>
+    <Name>Scientists</Name>
+    <Description>Scientists are responsible for resource production bonuses.  The more scientists you have across the land, the better your bonuses.</Description>
+    <RecipeGroup>Laborer</RecipeGroup>
+    <Ingredients>
+      <Ingredient resourceType="stat" resource="Peasants" amount="1" />
+      <Ingredient resourceType="stat" resource="Time" amount="2" />
+    </Ingredients>
+    <Results>
+      <Result resourceType="stat" resource="Scientists" amount="1"/>
+    </Results>
+  </Recipe>
+
+  <Recipe>
+    <ID>783</ID>
+    <Name>Wizards</Name>
+    <Description>Wizards are the spellcasters and artificers of the realm.  Magic flows from the land, so the more land you have the more Wizards it takes to control that magic. It takes a long time to train to be a wizard, and most people never complete the training due to various gruesome circumstances.</Description>
+    <RecipeGroup>Laborer</RecipeGroup>
+    <Ingredients>
+      <Ingredient resourceType="stat" resource="Peasants" amount="10" />
+      <Ingredient resourceType="stat" resource="Time" amount="10" />
+    </Ingredients>
+    <Results>
+      <Result resourceType="stat" resource="Wizards" amount="1"/>
+    </Results>
+  </Recipe>
+  
+</Recipes>

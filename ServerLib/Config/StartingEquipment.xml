@@ -1,0 +1,38 @@
+<xml>
+  <General>
+    <Character>
+      <FarmerEfficiency value="60" />
+      <BlacksmithEfficiency value="50" />
+      <MasonEfficiency value="50" />
+      <AlchemystEfficiency value="50" />
+      <ScientistEfficiency value="50" />
+      <MinerEfficiency value="50" />
+      <MerchantEfficiency value="50" />
+      <WizardEfficiency value="50" />
+      <MaxEffects value="3" />
+    </Character>
+    <Resources>
+      <Gold value="5000" />
+      <Peasants value="100" />
+      <Farmers value="100" />
+      <Blacksmiths value="10" />
+      <Masons value="10" />
+      <Alchemysts value="10" />
+      <Scientists value="10" />
+      <Miners value="10" />
+      <Merchants value="10" />
+      <Wizards value="10" />      
+      <Food value="100" />
+    </Resources>
+    <LandNodes>
+      <Steel value="10" />
+      <Grains value="50" />
+      <AegisShards value="100" />
+      <Birch value="100" />
+    </LandNodes>
+    <Army>
+      <NoviceArchers value="50" />
+      <NoviceSwordsmen value="50" />
+    </Army>
+  </General>
+</xml>
