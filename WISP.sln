@@ -72,6 +72,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{BD
 		Database\WISP_WispUsers.sql = Database\WISP_WispUsers.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "License", "License", "{44544A86-06B8-4821-A04F-91AE70B57514}"
+	ProjectSection(SolutionItems) = preProject
+		License_Commercial.txt = License_Commercial.txt
+		LICENSE_GPL.html = LICENSE_GPL.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
