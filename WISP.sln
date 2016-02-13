@@ -57,8 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		_LIB_\Enyim.Caching.xml = _LIB_\Enyim.Caching.xml
 		_LIB_\ICSharpCode.SharpZipLib.dll = _LIB_\ICSharpCode.SharpZipLib.dll
 		Skills\License.txt = Skills\License.txt
-		License_Commercial.txt = License_Commercial.txt
-		LICENSE_GPL.html = LICENSE_GPL.html
+		License\License_Commercial.txt = License\License_Commercial.txt
+		License\LICENSE_GPL.html = License\LICENSE_GPL.html
 		_LIB_\log4net.dll = _LIB_\log4net.dll
 		_LIB_\log4net.xml = _LIB_\log4net.xml
 		_LIB_\Membase.dll = _LIB_\Membase.dll
@@ -70,12 +70,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{BD
 		Database\WISP_Game.sql = Database\WISP_Game.sql
 		Database\WISP_Session.sql = Database\WISP_Session.sql
 		Database\WISP_WispUsers.sql = Database\WISP_WispUsers.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "License", "License", "{44544A86-06B8-4821-A04F-91AE70B57514}"
-	ProjectSection(SolutionItems) = preProject
-		License_Commercial.txt = License_Commercial.txt
-		LICENSE_GPL.html = LICENSE_GPL.html
 	EndProjectSection
 EndProject
 Global
