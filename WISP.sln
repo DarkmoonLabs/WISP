@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{7D862E24-CB5B-4D85-9A10-B645EFF78EFF}"
 EndProject
@@ -56,6 +56,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		_LIB_\Enyim.Caching.dll = _LIB_\Enyim.Caching.dll
 		_LIB_\Enyim.Caching.xml = _LIB_\Enyim.Caching.xml
 		_LIB_\ICSharpCode.SharpZipLib.dll = _LIB_\ICSharpCode.SharpZipLib.dll
+		License_Commercial.txt = License_Commercial.txt
+		..\..\LICENSE_GPL.htm = ..\..\LICENSE_GPL.htm
 		_LIB_\log4net.dll = _LIB_\log4net.dll
 		_LIB_\log4net.xml = _LIB_\log4net.xml
 		_LIB_\Membase.dll = _LIB_\Membase.dll
